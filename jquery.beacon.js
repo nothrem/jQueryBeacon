@@ -7,9 +7,18 @@
 (function ($) {
 
 	$.beacon = function(url, data) {
-		if (window.navigator && navigator.sendBeacon()) {
-			if (navigator.sendBeacon(url, data)) {
-				return;
+		if (!url) {
+			throw new Error('An URL is required to send a beacon.');
+		}
+
+		if ('navigator' in window && 'sendBeacon' in navigator) {
+			try {
+				if (navigator.sendBeacon(url, data)) {
+					return;
+				}
+			}
+			catch (e) {
+				//nothing - will be handler below
 			}
 		}
 
@@ -26,6 +35,6 @@
 			//Just to make sure we try everything, try to send asynchronous request if the synchronous one fails.
 			$.ajax(url, {data: data});
 		}
-	}
+	};
 
 }(window.jQuery));
