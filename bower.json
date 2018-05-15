@@ -1,0 +1,19 @@
+{
+  "name": "jQueryBeacon",
+  "homepage": "https://github.com/nothrem/jQueryBeacon",
+  "authors": [
+    "nothrem <jquery.beacon@nothrem.cz>"
+  ],
+  "description": "A jQuery plugin that allows to send a Beacon or a synchronous AJAX request where response is not needed but data must reach the server.",
+  "main": "jquery.beacon.js",
+  "keywords": [
+    "jquery",
+    "beacon",
+    "sendBeacon",
+    "ajax"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.11.1"
+  }
+}
